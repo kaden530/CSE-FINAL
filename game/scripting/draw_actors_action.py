@@ -1,5 +1,6 @@
 from game.scripting.action import Action
-
+from game.shared.point import Point 
+import constants 
 
 class DrawActorsAction(Action):
     """
@@ -26,15 +27,24 @@ class DrawActorsAction(Action):
             cast (Cast): The cast of Actors in the game.
             script (Script): The script of Actions in the game.
         """
-        score = cast.get_first_actor("scores")
-        food = cast.get_first_actor("foods")
-        snake = cast.get_first_actor("snakes")
+        score1 = cast.get_first_actor("player_1_scores")
+        score1.set_text(f"Player One: {score1._points}") 
+
+        score2 = cast.get_first_actor("player_2_scores") 
+        score2.set_text(f"Player Two: {score2._points}") # Set text "Player Two" on screen.
+        score2.set_position(Point((constants.MAX_X - 200), 0)) # Set position for Player Two.
+
+        snake = cast.get_first_actor("player_1")
         segments = snake.get_segments()
+        
+        snake2 = cast.get_first_actor("player_2")
+        segments2 = snake2.get_segments()
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
-        self._video_service.draw_actor(food)
         self._video_service.draw_actors(segments)
-        self._video_service.draw_actor(score)
+        self._video_service.draw_actors(segments2)
+        self._video_service.draw_actor(score1)
+        self._video_service.draw_actor(score2)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()

@@ -30,20 +30,33 @@ class MoveActorsAction(Action):
             if self.game_started == True:
                 actor.move_next()
             else:
-                if self._keyboard_service.is_key_down('a'):
-                    self.game_started = True
+                # if self._keyboard_service.is_key_down('a'):
+                #     self.game_started = True
 
-                    # right
-                if self._keyboard_service.is_key_down('d'):
-                    self.game_started = True
+                # # right
+                # if self._keyboard_service.is_key_down('d'):
+                #     self.game_started = True
 
-                    # up
+                # up
                 if self._keyboard_service.is_key_down('w'):
                     self.game_started = True
 
-                    # down
+                # down
                 if self._keyboard_service.is_key_down('s'):
                     self.game_started = True
 
+                # if self._keyboard_service.is_key_down('i'):
+                #     self.game_started = True
 
+                # right
+                if self._keyboard_service.is_key_down('l'):
+                    self.game_started = True
+
+                # up
+                if self._keyboard_service.is_key_down('k'):
+                    self.game_started = True
+
+                # # down
+                # if self._keyboard_service.is_key_down('j'):
+                #     self.game_started = True              
 
