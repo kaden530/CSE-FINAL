@@ -1,6 +1,7 @@
 import os
 import pathlib
 import pyray
+from constants import *
 from game.services.audio_service import AudioService 
 
 
@@ -22,7 +23,7 @@ class RaylibAudioService(AudioService):
     def play_sound(self, sound):
         filepath = sound.get_filename()
         # fixed os dependent filepath
-        filepath = str(pathlib.Path(filepath))
+        filepath = str(pathlib.Path(f"{ROOT_DIR}\\{filepath}"))
         volume = sound.get_volume()
         sound = self._sounds[filepath]
         # pyray.set_sound_volume(volume)

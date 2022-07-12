@@ -1,5 +1,6 @@
 import pathlib
 from game.casting.color import Color
+import os
 
 # -------------------------------------------------------------------------------------------------- 
 # GENERAL GAME CONSTANTS
@@ -110,7 +111,7 @@ RACKET_VELOCITY = 7
 # RACKET 2
 RACKET_GROUP_2 = "rackets2"
 RACKET_IMAGES_2 = [f"assets/images/{n:03}.png" for n in range(103, 106)]
-
+ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__)))
 
 # BRICK
 # BRICK_GROUP = "bricks"

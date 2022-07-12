@@ -27,7 +27,7 @@ class RaylibVideoService(VideoService):
         filepath = image.get_filename()
         # fixed os dependent filepath
         filepath = str(pathlib.Path(filepath))
-        texture = self._textures[filepath]
+        texture = self._textures[f"{ROOT_DIR}\\{filepath}"]
         x = position.get_x()
         y = position.get_y()
         raylib_position = pyray.Vector2(x, y)
@@ -58,7 +58,7 @@ class RaylibVideoService(VideoService):
         alignment = text.get_alignment()
         tint = self._to_raylib_color(Color(255, 255, 255))
 
-        font = self._fonts[filepath]
+        font = self._fonts[f"{ROOT_DIR}\\{filepath}"]
         text_image = pyray.image_text_ex(font, value, size, spacing, tint)
         
         x = position.get_x()
