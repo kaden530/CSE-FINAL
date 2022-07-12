@@ -7,7 +7,7 @@ import os
 # -------------------------------------------------------------------------------------------------- 
 
 # GAME
-GAME_NAME = "Batter"
+GAME_NAME = "PONG"
 FRAME_RATE = 60
 
 # SCREEN
@@ -86,11 +86,9 @@ MAXIMUM_LIVES = 5
 
 # HUD
 HUD_MARGIN = 15
-LEVEL_GROUP = "level"
-LIVES_GROUP = "lives"
-SCORE_GROUP = "score"
+P1_GROUP = "player1"
+P2_GROUP = "player2"
 LEVEL_FORMAT = "LEVEL: {}"
-LIVES_FORMAT = "LIVES: {}"
 SCORE_FORMAT = "SCORE: {}"
 
 # BALL
@@ -111,21 +109,11 @@ RACKET_VELOCITY = 7
 # RACKET 2
 RACKET_GROUP_2 = "rackets2"
 RACKET_IMAGES_2 = [f"assets/images/{n:03}.png" for n in range(103, 106)]
+
+
+# FILE PATHS
 ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__)))
 
-# BRICK
-# BRICK_GROUP = "bricks"
-# BRICK_IMAGES = {
-#     "b": [f"assets/images/{i:03}.png" for i in range(10,19)],
-#     "g": [f"assets/images/{i:03}.png" for i in range(20,29)],
-#     "p": [f"assets/images/{i:03}.png" for i in range(30,39)],
-#     "y": [f"assets/images/{i:03}.png" for i in range(40,49)]
-# }
-# BRICK_WIDTH = 80
-# BRICK_HEIGHT = 28
-# BRICK_DELAY = 0.5
-# BRICK_RATE = 4
-# BRICK_POINTS = 50
 
 # DIALOG
 DIALOG_GROUP = "dialogs"
