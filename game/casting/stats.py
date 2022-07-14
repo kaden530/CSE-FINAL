@@ -9,8 +9,8 @@ class Stats(Actor):
         """Constructs a new Stats."""
         super().__init__(debug)
         self._level = 1
-        self._lives = DEFAULT_LIVES
-        self._score = 0
+        self._score2 = 0
+        self._score1 = 0
 
     def add_life(self):
         """Adds one life."""
@@ -23,31 +23,27 @@ class Stats(Actor):
         Args:
             points: A number representing the points to add.
         """
-        self._score += points
+        if points == 1:
+            self._score1 += 1
+        else:
+            self._score2 += 1
 
-    def get_level(self):
+    def get_score2(self):
         """Gets the level.
 
         Returns:
             A number representing the level.
         """
-        return self._level
+        return self._score1
 
-    def get_lives(self):
-        """Gets the lives.
-
-        Returns:
-            A number representing the lives.
-        """
-        return self._lives
   
-    def get_score(self):
+    def get_score1(self):
         """Gets the score.
 
         Returns:
             A number representing the score.
         """
-        return self._score
+        return self._score2
 
     def lose_life(self):
         """Removes one life."""
@@ -62,4 +58,5 @@ class Stats(Actor):
         """Resets the stats back to their default values."""
         self._level = 1
         self._lives = DEFAULT_LIVES
-        self._score = 0
+        self._score1 = 0
+        self._score2 = 0
